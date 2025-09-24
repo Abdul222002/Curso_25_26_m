@@ -21,10 +21,27 @@ function suma(a=0, b=0) {
     return a + b;
 }
 
+function saludar(nombreUsuario){
+    return `Bienvenid@ ${nombreUsuario ?? "Usuario"}`;
+}
+
 //------------------inicializar las apliacines------------------///
 
-suma(5,7)
+let nombre;
+console.log(saludar(nombre));
 
-console.log(suma(5, 3));
-console.log(suma(5));
-console.log(suma());
+//funcion aprobados que le pase por parametro un numero y diga si estoy aprobado o no aprobado.
+// crear una version 2.o que si le paso un numero >=9 diga sobresaliente, 
+// si esta entre 5-9 aprobado, si es <5 suspenso
+
+//function aprobados(nota){
+
+//}
+
+// const aprobados= (nota=0) => {
+//     return nota>=5 ? "Aprobado" : "Suspenso";
+// }
+
+const aprobados= (nota=0) => nota>=5 ? "Aprobado" : "Suspenso"
+const aprobadosV2= (nota=0) => nota>=9 ? "sobresaliente" : nota>=5 ? "Aprobado" : "Suspenso";
+console.log(aprobados(9));
