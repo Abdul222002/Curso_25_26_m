@@ -26,6 +26,6 @@ edades.slice(0,2); //extrae desde la posicion 0 hasta la 2 pero sin incluirla
 edades.map((edad)=>{edad*2}); //devuelve un nuevo array con los valores modificados
 
 // ********** filter, filtra los elementos de un array segun una condicion
-edades.filter((edad,i)=> {
+edades.filter((edad,i)=> {7
     console.log(i);
     return edad>=18}); //devuelve un nuevo array con los valores que cumplen la condicion
