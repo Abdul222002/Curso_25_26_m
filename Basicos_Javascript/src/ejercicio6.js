@@ -69,4 +69,5 @@ console.log(usuario);
 const promedio=usuarios.map(usuario=>usuario.data.book *28).reduce((suma,precio)=>suma+precio,0);
 console.log(promedio);
 // Decidme que usuarios no tienen libros
-const manolete=usuario.filter(usuario=>Number(usuario.data.book===0)).map(usuario=>usuario.nombre);
+const sinLibros=usuarios.filter(usuario=>Number(usuario.data.book===0)).map(usuario=>usuario.nombre);
+console.log(sinLibros);
