@@ -61,7 +61,7 @@ function normalizarEmail(emails=[]){
 console.log(normalizarEmail(["  ejemplo1@gmail.com  ", "  ejemplo2@gmail.com  ", "  ejemplo3@gmail.com  "]));
 
 //------------------Apartado 5------------------///
-
+    
 /**
  * Filtra un array de nombres por longitud.
  * @param {Array} nombres - Array de nombres.
