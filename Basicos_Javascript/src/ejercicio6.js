@@ -20,7 +20,7 @@ const ArrayConcat=[...frutas,"aguacate",...edades];/// ESTA ES LA QUE HAY QUE US
 // SET <---- Estructura de datos que almacena valores únicos, sin duplicados
 
 const pesos=[4,5,3,2,1,4,5,3,2,1];
-const sinDuplicados=[...new Set(pesos)]; // {1, 2, 3, 4, 5} ///SUPER IMPORTATNTE*****
+const sinDuplicados=[...new Set(pesos)]; // {1, 2, 3, 4, 5} ///SUPER IMPORTATNTE*****SPREAD OPERATOR
 
 // .reduce <---- Se utiliza para reducir un array a un único valor, aplicando una función acumulativa a cada elemento del array
 

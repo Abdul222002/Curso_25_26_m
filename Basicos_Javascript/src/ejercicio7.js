@@ -7,6 +7,8 @@ const productos = [
     { id: 6, nombre: 'Pantalón', precio: 60, stock: 5, categoria: 'Ropa' },
 ];
 
+
+
 // Se pide:
 // 1.- Obtener un array con los nombres de todos los productos que están agotados.
 const productosVacios = productos
