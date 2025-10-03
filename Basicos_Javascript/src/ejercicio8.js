@@ -180,3 +180,4 @@ const numerosPares=[1,2,3,4,5,6];
 
 // ¿Hay algun numero par en el array?
 const hasEven=numerosPares.some(num=>num%2===0); // Esto devuelve true o false si esto devuelve algun numero 
+
