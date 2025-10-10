@@ -43,7 +43,6 @@ export const getTareas= ()=>{
 }
 
 
-
 export const addTarea=(nombreTarea)=>{
 
     const nombre=String(nombreTarea ?? "").trim();
