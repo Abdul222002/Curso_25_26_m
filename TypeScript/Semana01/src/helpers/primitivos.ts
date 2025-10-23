@@ -194,3 +194,37 @@ const generarMapaClientes=(clientes:Cliente[]):Map<number,{nombre:string,email:s
 // crearemos la funcion Calculadora que le pasaremos como parametro una operacion y nos devolvera el resultado de la operacion.
 //Probarlo con 10,5 y otra 10,0.
 //¿Se podria ampliar a otras operaciones?
+
+
+interface Operacion{
+    tipo: 'sumar' | 'restar' | 'multiplicar' | 'dividir';
+    operando1: number;
+    operando2: number;
+    operador3?: number;
+}
+
+const calculadora=(operacion:Operacion):number=>{
+    switch(operacion.tipo){
+        case 'sumar':
+            return operacion.operando1 + operacion.operando2;
+        case 'restar':
+            return operacion.operando1 - operacion.operando2;
+        case 'multiplicar':
+            return operacion.operando1 * operacion.operando2;
+        case 'dividir':
+            if(operacion.operando2===0){
+                throw new Error("No se puede dividir por cero");
+            }
+            return operacion.operando1 / operacion.operando2;
+    }
+}
+
+console.log(calculadora({tipo:'sumar',operando1:10,operando2:5}));
+console.log(calculadora({tipo:'restar',operando1:10,operando2:5}));
+console.log(calculadora({tipo:'multiplicar',operando1:10,operando2:5}));
+console.log(calculadora({tipo:'dividir',operando1:10,operando2:5}));
+
+console.log(calculadora({tipo:'sumar',operando1:10,operando2:0}));
+console.log(calculadora({tipo:'restar',operando1:10,operando2:0}));
+console.log(calculadora({tipo:'multiplicar',operando1:10,operando2:0}));
+console.log(calculadora({tipo:'dividir',operando1:10,operando2:0}));
