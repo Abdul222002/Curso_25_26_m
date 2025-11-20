@@ -1,5 +1,7 @@
-import { createImageGrid } from "./imageCard";
+import { createImageCard, createImageGrid } from "./imageCard";
 import { imagesData } from "../data/images";
+import createImageModal from "./ImageModal";
+
 
 export default function createGalleryApp() {
     

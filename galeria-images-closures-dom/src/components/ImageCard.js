@@ -1,4 +1,5 @@
 import { imagesData } from "../data/images";
+import createImageModal from "./ImageModal";
 
 
 /*
@@ -15,7 +16,6 @@ import { imagesData } from "../data/images";
 export function createImageCard(image,onImageClick,onFavouriteToggle){
 
     // contenedor principal
-
     const card = document.createElement("div");
     card.className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer group relative";
     card.dataset.imageId=image.id;
@@ -49,7 +49,9 @@ export function createImageCard(image,onImageClick,onFavouriteToggle){
     // evento de la tarjeta
 
     card.onclick=()=>{
-        alert(image.id); // se sustituye por imageOnClick
+    // se sustituye por imageOnClick
+        const modal=createImageModal(image);
+        modal.open();
     }
 
     //introducir en card toda la informacion
