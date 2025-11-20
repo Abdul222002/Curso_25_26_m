@@ -228,3 +228,12 @@ console.log(calculadora({tipo:'sumar',operando1:10,operando2:0}));
 console.log(calculadora({tipo:'restar',operando1:10,operando2:0}));
 console.log(calculadora({tipo:'multiplicar',operando1:10,operando2:0}));
 console.log(calculadora({tipo:'dividir',operando1:10,operando2:0}));
+
+ //Vamos a crear un sistema de categorias:
+ //Crear un map llamado catalogo donde cada categoria tiene un set de productos.Crear las siguientes funciones:
+ // agregar producto si el producto ha sido agregado
+ // y mostrar catalogo completo.
+ //Adicionalmente crear una funcion llamada buscarProducto que le pase un string, el nombre del producto y me diga en que categoria esta un producto determinado.
+ //!!! Cuidado con el get que devuelve undefined si no existe la clave.!!!
+
+ 
