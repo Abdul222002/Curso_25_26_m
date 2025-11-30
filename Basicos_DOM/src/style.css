@@ -377,6 +377,15 @@ button:active {
 .menu-container {
   margin-top: 2rem;
 }
+/* Ocultar los platos al inicio */
+.dishes-container {
+  display: none; /* antes estaban siempre visibles */
+}
+
+/* Mostrar los platos cuando se haga toggle */
+.dishes-container.open {
+  display: block;
+}
 
 .restaurant-title {
   text-align: center;
