@@ -105,8 +105,7 @@ export default function createEjercicio11() {
         container.innerHTML = `
             <h2>Buscador de personajes de Rick and Morty</h2>
             <input type="text" id="searchInput" placeholder="Escribe un nombre..."/>
-            < id="resultsContainer" class="grid"></
-            iv>
+            <div id="resultsContainer" class="grid"></div>
         `;
 
         const input = container.querySelector('#searchInput');
