@@ -193,46 +193,45 @@ export const eventos = [
   }
 ];
 
-// Datos para el Ejercicio 10: Proyectos de portafolio
 export const proyectos = [
-  {
-    id: 1,
-    titulo: "E-commerce Moderno",
-    descripcion: "Tienda online con carrito de compras y pasarela de pago",
-    tecnologias: ["React", "Node.js", "MongoDB"],
-    imagen: "https://via.placeholder.com/300x200/4f46e5/ffffff?text=E-commerce",
-    url: "https://ejemplo-ecommerce.com",
-    destacado: true,
-    fechaFinalizacion: "2024-01-20"
-  },
-  {
-    id: 2,
-    titulo: "App del Clima",
-    descripcion: "Aplicación web para consultar el pronóstico del tiempo",
-    tecnologias: ["Vue.js", "API REST", "Chart.js"],
-    imagen: "https://via.placeholder.com/300x200/059669/ffffff?text=Clima",
-    url: "https://ejemplo-clima.com",
-    destacado: false,
-    fechaFinalizacion: "2023-12-15"
-  },
-  {
-    id: 3,
-    titulo: "Gestor de Tareas",
-    descripcion: "Aplicación para organizar y trackear tareas diarias",
-    tecnologias: ["JavaScript", "LocalStorage", "CSS Grid"],
-    imagen: "https://via.placeholder.com/300x200/dc2626/ffffff?text=Tareas",
-    url: "https://ejemplo-tareas.com",
-    destacado: true,
-    fechaFinalizacion: "2024-02-10"
-  },
-  {
-    id: 4,
-    titulo: "Blog Personal",
-    descripcion: "Sistema de blogging con Markdown y comentarios",
-    tecnologias: ["Next.js", "Markdown", "Tailwind CSS"],
-    imagen: "https://via.placeholder.com/300x200/7c3aed/ffffff?text=Blog",
-    url: "https://ejemplo-blog.com",
-    destacado: false,
-    fechaFinalizacion: "2023-11-30"
-  }
+{
+id: 1,
+titulo: "E-commerce Moderno",
+descripcion: "Tienda online con carrito de compras y pasarela de pago",
+tecnologias: ["React", "Node.js", "MongoDB"],
+imagen: "https://images.unsplash.com/photo-1581091215369-2e8bbf8f7b9f?crop=entropy&cs=tinysrgb&fit=max&h=200&w=300",
+url: "https://ejemplo-ecommerce.com",
+destacado: true,
+fechaFinalizacion: "2024-01-20"
+},
+{
+id: 2,
+titulo: "App del Clima",
+descripcion: "Aplicación web para consultar el pronóstico del tiempo",
+tecnologias: ["Vue.js", "API REST", "Chart.js"],
+imagen: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&h=200&w=300",
+url: "https://ejemplo-clima.com ",
+destacado: false,
+fechaFinalizacion: "2023-12-15"
+},
+{
+id: 3,
+titulo: "Gestor de Tareas",
+descripcion: "Aplicación para organizar y trackear tareas diarias",
+tecnologias: ["JavaScript", "LocalStorage", "CSS Grid"],
+imagen: "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?crop=entropy&cs=tinysrgb&fit=max&h=200&w=300",
+url: "https://ejemplo-tareas.com",
+destacado: true,
+fechaFinalizacion: "2024-02-10"
+},
+{
+id: 4,
+titulo: "Blog Personal",
+descripcion: "Sistema de blogging con Markdown y comentarios",
+tecnologias: ["Next.js", "Markdown", "Tailwind CSS"],
+imagen: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=max&h=200&w=300",
+url: "https://ejemplo-blog.com",
+destacado: false,
+fechaFinalizacion: "2023-11-30"
+}
 ];

@@ -18,5 +18,7 @@ const fetching= async(endpoint) =>{
     }
 }
 
+const notfeching=()=>{};
+
 
 export default fetching;
