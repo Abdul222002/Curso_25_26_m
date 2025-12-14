@@ -27,7 +27,7 @@ export function parseWeatherData(data) {
     if (!data || !data.main || !data.weather || !data.wind) {
         return null; // Manejo de error si la data no tiene lo esperado
     }
-
+    
     return {
         city: data.name,
         pais: data.sys.country || "",
