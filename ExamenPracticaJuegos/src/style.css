@@ -1,0 +1,723 @@
+/* 
+  EXAMEN: GameStore Pro - Tu Tienda de Videojuegos
+  CSS con tema Gaming (Morado #9146FF + Negro #0E0E10)
+  
+  IMPORTANTE: Lee los comentarios para saber qué clase usar en cada elemento
+*/
+
+:root {
+  /* Colores tema Gaming */
+  --primary-color: #9146FF;
+  --primary-dark: #772CE8;
+  --accent-color: #00F5A0;
+  --background-color: #0E0E10;
+  --card-bg: #18181B;
+  --text-color: #EFEFF1;
+  --text-secondary: #ADADB8;
+  --border-color: #2A2A2D;
+  --success-color: #00E676;
+  --warning-color: #FFD700;
+  --font-family: "Inter", system-ui, -apple-system, sans-serif;
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* =========================================
+   PARTE 4: ESTRUCTURA PRINCIPAL (app.js)
+   ========================================= */
+
+/* Header de la aplicación - Usar clase: "header" */
+.header {
+  background: linear-gradient(135deg, var(--card-bg) 0%, #1a1a1f 100%);
+  padding: 1.2rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.header h1 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-shadow: 0 0 20px rgba(145, 70, 255, 0.5);
+}
+
+/* Indicador de carrito - Usar clase: "cart-indicator" */
+.cart-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--card-bg);
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  border: 2px solid var(--border-color);
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.cart-indicator:hover {
+  border-color: var(--accent-color);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 245, 160, 0.3);
+}
+
+#cart-count {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  min-width: 25px;
+  text-align: center;
+}
+
+/* Contenedor principal - Usar clase: "main-container" */
+.main-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Contenedor del buscador - Usar clase: "search-container" */
+.search-container {
+  margin-bottom: 2rem;
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--border-color);
+}
+
+/* Input de búsqueda - Usar clase: "search-input" e id: "search-input" */
+.search-input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  border: 2px solid var(--border-color);
+  background-color: #2A2A2D;
+  color: white;
+  font-size: 1.1rem;
+  transition: var(--transition);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: #35353A;
+  box-shadow: 0 0 0 4px rgba(145, 70, 255, 0.15);
+}
+
+.search-input::placeholder {
+  color: var(--text-secondary);
+}
+
+/* Sección de filtros - Usar clase: "filters-section" */
+.filters-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--border-color);
+}
+
+/* Contenedor de botones de género - Usar clase: "genres-container" */
+.genres-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Botones de género - Usar clase: "genre-btn" */
+.genre-btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  border: 2px solid var(--border-color);
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.genre-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: var(--primary-color);
+  transform: translate(-50%, -50%);
+  transition: width 0.4s, height 0.4s;
+  z-index: -1;
+}
+
+.genre-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.genre-btn:hover {
+  border-color: var(--primary-color);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(145, 70, 255, 0.4);
+}
+
+/* Botón de género activo - Clase: "genre-btn active" */
+.genre-btn.active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(145, 70, 255, 0.5);
+}
+
+/* Selectores de filtros - Usar clases: "platform-selector" y "sort-selector" */
+.platform-selector,
+.sort-selector {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.platform-selector label,
+.sort-selector label {
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+/* Selects - Usar clases: "platform-select" y "sort-select" */
+.platform-select,
+.sort-select {
+  flex: 1;
+  max-width: 300px;
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  border: 2px solid var(--border-color);
+  background-color: #2A2A2D;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.platform-select:hover,
+.sort-select:hover {
+  border-color: var(--primary-color);
+  background-color: #35353A;
+}
+
+.platform-select:focus,
+.sort-select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(0, 245, 160, 0.15);
+}
+
+/* Contenedor de la lista de juegos - Usar id: "games-container" */
+.games-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* =========================================
+   PARTE 5: COMPONENTE GAMECARD (GameCard.js)
+   ========================================= */
+
+/* Tarjeta de juego individual - Usar clase: "game-card" */
+.game-card {
+  background: linear-gradient(145deg, var(--card-bg) 0%, #1a1a1f 100%);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: var(--transition);
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+  border: 2px solid transparent;
+}
+
+.game-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(145, 70, 255, 0) 0%,
+    rgba(145, 70, 255, 0.1) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.game-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(145, 70, 255, 0.4);
+  border-color: var(--primary-color);
+}
+
+.game-card:hover::after {
+  opacity: 1;
+}
+
+/* Imagen de portada del juego - Usar clase: "game-cover" */
+.game-cover {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+  background: linear-gradient(135deg, #2a3f54 0%, #1a2332 100%);
+  transition: transform 0.4s;
+}
+
+.game-card:hover .game-cover {
+  transform: scale(1.05);
+}
+
+/* Contenedor de información de la tarjeta - Usar clase: "game-info" */
+.game-info {
+  padding: 1.2rem;
+}
+
+/* Título del juego - Usar clase: "game-title" */
+.game-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: white;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 2.8em;
+}
+
+/* Desarrollador del juego - Usar clase: "game-developer" */
+.game-developer {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Plataforma - Usar clase: "game-platform" */
+.game-platform {
+  color: var(--accent-color);
+  font-size: 0.85rem;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+/* Meta información (precio y rating) - Usar clase: "game-meta" */
+.game-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Precio del juego - Usar clase: "game-price" */
+.game-price {
+  color: var(--success-color);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* Rating del juego - Usar clase: "game-rating" */
+.game-rating {
+  color: var(--warning-color);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* Género del juego - Usar clase: "game-genre" */
+.game-genre {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: rgba(145, 70, 255, 0.2);
+  color: var(--primary-color);
+  font-size: 0.8rem;
+  border-radius: 20px;
+  font-weight: 600;
+  border: 1px solid rgba(145, 70, 255, 0.4);
+  margin-bottom: 0.5rem;
+}
+
+/* Stock - Usar clase: "game-stock" */
+.game-stock {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+/* =========================================
+   PARTE 6: ESTADOS Y STORAGE (storage.js / GameCard.js)
+   ========================================= */
+
+/* Estado: Juego favorito - Clase aplicada al hacer click: "game-favorite" */
+.game-favorite {
+  border-color: var(--warning-color) !important;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+}
+
+.game-favorite::before {
+  content: "❤️";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 2rem;
+  z-index: 10;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.8));
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+/* Estado: Juego en carrito - Clase aplicada al hacer doble click: "game-in-cart" */
+.game-in-cart {
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 0 25px rgba(0, 245, 160, 0.5);
+}
+
+.game-in-cart::before {
+  content: "🛒";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 2rem;
+  z-index: 10;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.8));
+  animation: cartBounce 2s infinite;
+}
+
+@keyframes cartBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Estado: Sin stock - Clase: "game-out-stock" */
+.game-out-stock {
+  opacity: 0.5;
+  filter: grayscale(80%);
+  cursor: not-allowed;
+}
+
+.game-out-stock::after {
+  content: "AGOTADO";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  background: rgba(255, 0, 0, 0.9);
+  color: white;
+  padding: 0.5rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 900;
+  border: 3px solid white;
+  border-radius: 5px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* =========================================
+   UTILIDADES Y FEEDBACK
+   ========================================= */
+
+/* Mensaje cuando no hay resultados */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem;
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  background: var(--card-bg);
+  border-radius: 15px;
+  border: 2px dashed var(--border-color);
+}
+
+.no-results::before {
+  content: "🎮";
+  display: block;
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+/* Animación de carga */
+.loading {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.loading::after {
+  content: "⏳";
+  display: block;
+  font-size: 4rem;
+  margin-top: 1rem;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animación suave para eliminar juegos */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8) rotate(5deg);
+  }
+}
+
+.game-card.removing {
+  animation: fadeOut 0.4s ease-out forwards;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.game-card {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* =========================================
+   BONUS: MODAL DE DETALLES
+   ========================================= */
+
+/* Modal overlay - Usar clase: "modal-overlay" */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.3s;
+}
+
+/* Modal contenido - Usar clase: "modal-content" */
+.modal-content {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  border: 3px solid var(--primary-color);
+  box-shadow: 0 20px 60px rgba(145, 70, 255, 0.5);
+  position: relative;
+  animation: slideUp 0.3s;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Botón cerrar modal - Usar clase: "modal-close" */
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  background: var(--primary-dark);
+  transform: rotate(90deg) scale(1.1);
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 1024px) {
+  .games-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .main-container {
+    padding: 1rem;
+  }
+
+  .filters-section {
+    padding: 1.5rem;
+  }
+
+  .genres-container {
+    gap: 0.6rem;
+  }
+
+  .genre-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .platform-selector,
+  .sort-selector {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .platform-select,
+  .sort-select {
+    max-width: 100%;
+  }
+
+  .games-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+
+  .game-title {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .games-container {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+
+  .cart-indicator {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* =========================================
+   SCROLLBAR PERSONALIZADO
+   ========================================= */
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}

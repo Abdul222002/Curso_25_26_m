@@ -1,0 +1,30 @@
+{
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "Casa Alma",
+      "city": "Madrid"
+    },
+    {
+      "id": 2,
+      "name": "La Barca Azul",
+      "city": "Barcelona"
+    },
+    {
+      "id": 3,
+      "name": "El Rincón de Lola",
+      "city": "Valencia"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "restaurantId": 1,
+      "userName": "María",
+      "title": "Buena experiencia",
+      "body": "Comida rica y trato amable.",
+      "rating": 4,
+      "date": "2025-11-10T18:23:00.000Z"
+    }
+  ]
+}

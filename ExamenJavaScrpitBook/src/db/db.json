@@ -1,0 +1,114 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Harry Potter y la piedra filosofal",
+      "author": "J.K. Rowling",
+      "year": 1997,
+      "pages": 254,
+      "isbn": "9788498382679",
+      "category": "Fantasía",
+      "description": "El inicio de la saga mágica más famosa del mundo.",
+      "cover": "https://covers.openlibrary.org/b/isbn/9788478884452-L.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "year": 1965,
+      "pages": 704,
+      "isbn": "9780441013593",
+      "category": "Ciencia Ficción",
+      "description": "La lucha por el control del planeta desértico Arrakis.",
+      "cover": "https://covers.openlibrary.org/b/isbn/9780441013593-L.jpg"
+    },
+    {
+      "id": 3,
+      "title": "It (Eso)",
+      "author": "Stephen King",
+      "year": 1986,
+      "pages": 1503,
+      "isbn": "9781501142970",
+      "category": "Terror",
+      "description": "Un grupo de niños aterrorizados por un ente maligno en Derry.",
+      "cover": "https://covers.openlibrary.org/b/isbn/9781501142970-L.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Orgullo y Prejuicio",
+      "author": "Jane Austen",
+      "year": 1813,
+      "pages": 432,
+      "isbn": "9780141439518",
+      "category": "Romance",
+      "description": "La compleja historia de amor entre Elizabeth Bennet y el Sr. Darcy.",
+      "cover": "https://covers.openlibrary.org/b/isbn/9780141439518-L.jpg"
+    },
+    {
+      "id": 5,
+      "title": "El Código Da Vinci",
+      "author": "Dan Brown",
+      "year": 2003,
+      "pages": 654,
+      "isbn": "9780307474278",
+      "category": "Thriller",
+      "description": "Un misterio oculto en las obras de Leonardo Da Vinci.",
+      "cover": "https://covers.openlibrary.org/b/isbn/9780307474278-L.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Los Pilares de la Tierra",
+      "author": "Ken Follett",
+      "year": 1989,
+      "pages": 1068,
+      "isbn": "9780451166890",
+      "category": "Historia",
+      "description": "La construcción de una catedral gótica en la Edad Media.",
+      "cover": "https://covers.openlibrary.org/b/isbn/9780451166890-L.jpg"
+    },
+    {
+      "id": 7,
+      "title": "El Señor de los Anillos",
+      "author": "J.R.R. Tolkien",
+      "year": 1954,
+      "pages": 1178,
+      "isbn": "9780544003415",
+      "category": "Fantasía",
+      "description": "La gran aventura de Frodo para destruir el Anillo Único.",
+      "cover": "https://covers.openlibrary.org/b/isbn/9780544003415-L.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Neuromante",
+      "author": "William Gibson",
+      "year": 1984,
+      "pages": 271,
+      "isbn": "9780441569595",
+      "category": "Ciencia Ficción",
+      "description": "Una obra maestra del cyberpunk y los hackers.",
+      "cover": "https://covers.openlibrary.org/b/isbn/9780441569595-L.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Drácula",
+      "author": "Bram Stoker",
+      "year": 1897,
+      "pages": 418,
+      "isbn": "9780486411095",
+      "category": "Terror",
+      "description": "La historia del vampiro más famoso de todos los tiempos.",
+      "cover": "https://covers.openlibrary.org/b/isbn/9780486411095-L.jpg"
+    },
+    {
+      "id": 10,
+      "title": "El Silencio de los Corderos",
+      "author": "Thomas Harris",
+      "year": 1988,
+      "pages": 368,
+      "isbn": "9780312195267",
+      "category": "Thriller",
+      "description": "Una agente del FBI busca la ayuda del Dr. Hannibal Lecter.",
+      "cover": "https://covers.openlibrary.org/b/isbn/9780312195267-L.jpg"
+    }
+  ]
+}
