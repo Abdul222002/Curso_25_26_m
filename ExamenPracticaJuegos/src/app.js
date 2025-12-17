@@ -220,7 +220,7 @@ async function createApp() {
         filters.platform = e.target.value
         applyFilters()
     })
-
+    platformSelect.toggleAttribute()
     sortSelect.addEventListener("change", e => {
         filters.sort = e.target.value
         applyFilters()

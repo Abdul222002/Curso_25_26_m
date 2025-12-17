@@ -1,6 +1,7 @@
-
 function createGameAPI() {
+    
     let games
+    
     const fetchAllGames=async ()=>{
         try {
             const res=await fetch("http://localhost:3000/games")
@@ -16,7 +17,6 @@ function createGameAPI() {
             throw new Error("Error"+error.message)
         }
     }   
-
 
     const getAllGames=()=>{
         return [...games]

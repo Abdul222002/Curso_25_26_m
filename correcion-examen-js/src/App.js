@@ -29,8 +29,6 @@ export const createApp = () => {
     
     filterContainer.appendChild(searchContainer)
 
-
-
-
     app.appendChild(header)
+    
 }

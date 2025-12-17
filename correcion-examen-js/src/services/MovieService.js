@@ -1,7 +1,6 @@
 const moviesCache = []
 const URL="http://192.168.50.120:1492/api/movies"
 
-
 const fetchMovies = async () => {
     try {
         const response= await fetch(URL)
@@ -16,6 +15,7 @@ const fetchMovies = async () => {
     }
 }
 
+
 const getMovies = () =>{
     return [...moviesCache]
 }
@@ -24,6 +24,7 @@ const getMovies = () =>{
 const getMovieById = (id) =>{
     return moviesCache.find(movie => movie.id === id)
 }
+
 
 export const MovieService = {
     fetchMovies,
